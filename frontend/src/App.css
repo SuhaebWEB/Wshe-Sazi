@@ -1,0 +1,61 @@
+
+@import "tailwindcss";
+
+@theme{
+    --breakpoint-1.5xl: 1300px; /*81.25rem*/
+}
+
+@layer components {
+  .my-li {
+    @apply bg-[#D9D9D9]  w-[325px] 1.5xl:w-[580px] 1.5xl:hover:bg-[#cecece] h-[51px] rounded-full 1.5xl:rounded-[20px] 1.5xl:pr-[17px] flex justify-center items-center 1.5xl:justify-start;
+  }
+  
+  /* Hide scrollbar for Chrome, Safari, and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge, and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+@font-face {
+  font-family: 'Rabar_021';
+  src: url('../public/fonts/Rabar_021.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+/*   DO NOT CHANGE THE BELOW CODE!!!  */
+/* Custom Thumb Styling */
+.styled-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default styling */
+  appearance: none;
+  width: 20px; /* Width of the thumb */
+  height: 20px; /* Height of the thumb */
+  background: white; /* White background for the thumb */
+  border: 3px solid #155DFC; /* Blue border for the thumb */
+  border-radius: 50%; /* Make it circular */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.styled-slider::-moz-range-thumb {
+  width: 20px; /* Width of the thumb */
+  height: 20px; /* Height of the thumb */
+  background: white; /* White background for the thumb */
+  border: 3px solid #155DFC; /* Blue border for the thumb */
+  border-radius: 50%; /* Make it circular */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+
+.font_Rabar_021{
+  font-family: Rabar_021;
+}
+
+body{
+  font-family: Rabar_021;
+  background-color: rgb(38,38,38);
+  margin: 0px auto;
+}
