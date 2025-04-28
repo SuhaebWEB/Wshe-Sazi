@@ -23,7 +23,7 @@ class CombinedWordRequest extends FormRequest
     {
         return [
             "kurdish_word"=>"required|string|max:255",
-            'reason'=>"required|string",
+            'reason'=>"string",
 
             'category'=>'required|string|exists:categories,category|',
             'english_word'=>'required|string',
@@ -36,7 +36,6 @@ class CombinedWordRequest extends FormRequest
             'kurdish_word.required' => 'پێویستە بە کوردی بنووسێ',
             'kurdish_word.string' => 'کوردی دەبێت بە شێوەی پێداوە بنووسرێت',
             'kurdish_word.max' => 'کوردی ناتوانێت لە 255 پیت زیاتر بێت',
-            'reason.required' => 'پێویستە ھۆکارێک بنووسێ',
             'reason.string' => 'ھۆکار دەبێت بە شێوەی پێداوە بنووسرێت',
     
             'category.required' => 'پۆل پێویستە',
