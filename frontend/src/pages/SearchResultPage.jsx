@@ -43,7 +43,7 @@ const SearchResultPaginate = () => {
       </h1>
       {currentResults.length > 0 ? (
         <div
-          className="grid grid-cols-1 1.5xl:grid-cols-3 gap-6 mb-[30px]"
+          className="grid grid-cols-1 1.5xl:grid-cols-3 my-grid gap-6 mb-[30px]"
           dir="rtl"
         >
           {currentResults.map((item, index) => (
