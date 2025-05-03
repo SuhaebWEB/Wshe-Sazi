@@ -44,6 +44,11 @@ const WordHistory = () => {
                                 <div className=" overflow-y-auto w-full flex flex-col gap-y-10 no-scrollbar::-webkit-scrollbar no-scrollbar">
 
                                     {
+                                        getData.length === 0 ? (
+                                            <div className="w-full h-full flex items-center justify-center">
+                                                <h2 className="text-[20px]">هیچ زانیاریەکی نییە</h2>
+                                            </div>
+                                        ) :(
                                         getData.map((data, index) => (
                                             <div key={index} className=" w-full h-[80px] flex flex-col ">
                                                 <div className="flex justify-between">
@@ -54,6 +59,7 @@ const WordHistory = () => {
                                                 <p className="pr-2.5 col-span-2 text-[16px]">{data.kurdish_word.reason}</p>
                                             </div>
                                         ))
+                                    )
                                     }
                                 </div>
                             </div>
