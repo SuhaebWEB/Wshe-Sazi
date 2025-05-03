@@ -1,4 +1,4 @@
-import PageHeader from "../../Components/pageHeadline";
+import PageHeader from "../../Components/PageHeadline";
 import axios from "../../api/axios";
 import UseAuth from "../../Auth/AuthContext";
 import { useState, useEffect } from "react";
