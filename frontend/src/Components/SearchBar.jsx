@@ -1,5 +1,5 @@
 import { useState, useEffect} from "react";
-import SearchResult from "./searchResult";
+import SearchResult from "./SearchResult";
 import axios from "../api/axios";
 import { useNavigate } from "react-router-dom";
 
