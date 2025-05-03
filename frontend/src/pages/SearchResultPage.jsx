@@ -42,7 +42,10 @@ const SearchResultPaginate = () => {
         ئەنجامی گەڕان بۆ "{getdata}"{" "}
       </h1>
       {currentResults.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6" dir="rtl">
+        <div
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-[30px]"
+          dir="rtl"
+        >
           {currentResults.map((item, index) => (
             <div
               key={index}
