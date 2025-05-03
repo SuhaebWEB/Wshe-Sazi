@@ -16,7 +16,7 @@ class Krd_eng_relation extends Model
         return $this->hasMany(Krd_eng_voting::class,'word_id');
     }
     public function kurdish_word(){
-        return $this->belongsTo(kurdish_word_list::class,'Kurdish_word_id');
+        return $this->belongsTo(Kurdish_word_list::class,'kurdish_word_id');
     } 
     public function category(){
         return $this->belongsTo(Category::class,'category');
