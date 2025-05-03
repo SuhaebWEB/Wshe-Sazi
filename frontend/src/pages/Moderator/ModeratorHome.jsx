@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import SearchResult from "../../Components/searchResult"; 
+import SearchResult from "../../Components/SearchResult"; 
 import axios from "../../api/axios";   
 import UseAuth from "../../Auth/AuthContext";
 
