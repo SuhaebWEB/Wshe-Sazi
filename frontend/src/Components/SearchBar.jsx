@@ -41,12 +41,15 @@ const SearchBar = ({ style }) => {
     setSearch(e.target.value);
   };
   const handleEnter = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && getAllData.length !==0) {
         navigate(`/search/${search}`, { state: { searchResults: getAllData } });
     }
   };
   const handleSearchClick = () => {
-    navigate(`/search/${search}`, { state: { searchResults: getAllData } });
+    if (getAllData.length !==0){
+
+      navigate(`/search/${search}`, { state: { searchResults: getAllData } });
+    }
   };
   
 
