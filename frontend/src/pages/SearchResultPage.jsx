@@ -62,7 +62,7 @@ const SearchResultPaginate = () => {
         <p className="text-center text-2xl">هیچ ئەنجامێک نەدۆزرایەوە</p>
       )}
       {searchResults.length > itemsPerPage && (
-        <footer className="mt-8 mb-20 1.5xl:mb-0 flex justify-center">
+        <footer className="mt-8 mb-20 1.5xl:mb-10 flex justify-center">
           <ReactPaginate
             previousLabel={"←"}
             nextLabel={"→"}
