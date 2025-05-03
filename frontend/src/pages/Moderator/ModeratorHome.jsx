@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState,useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import SearchResult from "../../Components/searchResult"; 
 import axios from "../../api/axios";   
 import UseAuth from "../../Auth/AuthContext";
@@ -10,43 +10,48 @@ const ModeratorMain = () => {
     const [getAllData, setAllData] = useState([]);   
     const { user,loading } = UseAuth();
     const [pageLoading, setpageLoading] = useState(false); 
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (!pageLoading && search.length > 0) {
+    const navigate = useNavigate(); 
+    useEffect(() => {
+        if (search.trim() === "") {
+          setData(false);
+          setAllData([]);
+          return;
+        }
+    
+        const fetchData = async () => {
             setpageLoading(true); // Start pageLoading
-            setData(true);
-        } 
-        if (search.length === 0) {
-            setData(false);
-        } 
-        try {
+          try {
             const response = await axios.get(`api/search?search=${search}`);
-            
             setAllData(response.data.data);
-        } catch (error) {
+            setData(true);
+            if (response.data.data.length === 0) {
+                setData(false); // Set getData to false if no data is found
+            }
+          } catch (error) {
             console.log(error);
-        } finally {
+          } finally { 
             setpageLoading(false); // Stop pageLoading
-        }
-    }; 
-
-    const handleEnter = (e) => {
-        if (e.key === 'Enter') {
-            handleSubmit(e);
-        }
-    };
-
-    const handleInputChange = (e) => {
-        const value = e.target.value;
-        setSearch(value);
+          }
+        };
     
-        if (value.trim() === "") {
-            setData(false); // Hide results when input is empty
-        }
-        setAllData([]);
-    };
+        const delayDebounce = setTimeout(() => {
+          fetchData();
+        }, 500); // Debounce delay
     
+        return () => clearTimeout(delayDebounce);
+      }, [search]);
+    
+      const handleInputChange = (e) => {
+        setSearch(e.target.value);
+      };
+      const handleEnter = (e) => {
+        if (e.key === "Enter") {
+          navigate(`/search/${search}`, { state: { searchResults: getAllData } });
+        }
+      };
+      const handleSearchClick = () => {
+        navigate(`/search/${search}`, { state: { searchResults: getAllData } });
+      };
 
     return (
         <>
@@ -66,8 +71,8 @@ const ModeratorMain = () => {
                             }
                             <div dir="ltr" className={`transition-all duration-500 flex flex-col items-center ${getData ? "justify-end gap-2 pt-4" : "justify-center"}`}>
                             <form className="font_Rabar_021 relative flex flex-row px-2.5 items-center w-[391px] h-[45px] bg-white rounded-[78px] mx-auto
-                                1.5xl:w-[705px] 1.5xl:h-[70px] 1.5xl:px-4.5 " onSubmit={handleSubmit}>
-                                <div onClick={handleSubmit} className="ml-4 rotate-[14.46deg] 1.5xl:scale-[1.3] cursor-pointer">
+                                1.5xl:w-[705px] 1.5xl:h-[70px] 1.5xl:px-4.5 " onSubmit={handleEnter}>
+                                <div onClick={handleEnter} className="ml-4 rotate-[14.46deg] 1.5xl:scale-[1.3] cursor-pointer">
                                     <img
                                         src="public/SVG/searchIcon.svg"
                                         alt="Search Icon"
@@ -80,7 +85,7 @@ const ModeratorMain = () => {
                                     <input
                                         id="searchBox"
                                         dir="rtl"
-                                        type="text"
+                                        type="text" 
                                         value={search}
                                         onChange={handleInputChange}
                                         onKeyDown={handleEnter}
@@ -92,7 +97,7 @@ const ModeratorMain = () => {
                                 <div className="w-[75px] h-[30px] bg-[#155DFC] rounded-[20px] flex items-center justify-center font-bold text-base text-white
                                     1.5xl:w-[113px]  1.5xl:h-[44px] 1.5xl:rounded-full 1.5xl:text-[20px]
                                     hover:bg-[#0037ff] shadow-[0_0_7px_rgba(0,0,0,0.35)]">
-                                    <button type="submit" className="w-full h-full">
+                                    <button type="submit"  onClick={handleSearchClick}  className="w-full h-full">
                                         گەڕان
                                     </button>
                                 </div>
