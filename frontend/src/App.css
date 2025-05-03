@@ -5,6 +5,16 @@
 @theme {
   --breakpoint-1.5xl: 1300px; /*81.25rem*/
 }
+.my-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  @media (min-width: 1300px) {
+    .my-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
 .my-li {
   @apply bg-[#D9D9D9]  w-[325px] 1.5xl:w-[580px] 1.5xl:hover:bg-[#cecece] h-[51px] rounded-full 1.5xl:rounded-[20px] 1.5xl:pr-[17px] flex justify-center items-center 1.5xl:justify-start;
 }
