@@ -45,14 +45,18 @@ const ModeratorMain = () => {
         setSearch(e.target.value);
       };
       const handleEnter = (e) => {
-        if (e.key === "Enter") {
+        if (e.key === "Enter" && getAllData.length !==0) {
           navigate(`/search/${search}`, { state: { searchResults: getAllData } });
         }
       };
-      const handleSearchClick = () => {
-        navigate(`/search/${search}`, { state: { searchResults: getAllData } });
-      };
 
+      const handleSearchClick = () => {
+          
+        if(getAllData.length !==0){
+            navigate(`/search/${search}`, { state: { searchResults: getAllData } });
+
+        }
+      };
     return (
         <>
             <div dir="rtl" className="h-screen w-full flex flex-col justify-center items-center 1.5xl:pt-[max(20vh,5vh)] 1.5xl:gap-5">
