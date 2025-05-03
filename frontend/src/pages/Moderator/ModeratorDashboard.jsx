@@ -39,7 +39,7 @@ const ModeratorDashboard = () => {
                                             </Link>
                                         )))
                                     }
-                                    <button type="button" onClick={handlingLogout} className="my-li bg-red-500 hover:bg-red-600 hover:cursor-pointer text-white flex justify-around 1.5xl:justify-start ">
+                                    <button type="button" onClick={handlingLogout} className=" w-[325px] 1.5xl:w-[580px] h-[51px] rounded-full 1.5xl:rounded-[20px] 1.5xl:pr-[17px] items-center 1.5xl:justify-start bg-red-500 hover:bg-red-600 hover:cursor-pointer text-white flex justify-around 1.5xl:justify-start ">
                                         <span> چوونەدەرەوە </span>
                                         <img
                                             src=" ../public/SVG/Exit.svg "
