@@ -24,8 +24,11 @@ const Navbar = () => {
   } else if (location.pathname.startsWith("/moderator")) {
     buttonText = "گەڕانەوە";
     buttonLink = "/moderator";
-    buttonClasses = "bg-gray-500 hover:bg-gray-600";
+  } else if (location.pathname.startsWith("/search")) {
+    buttonText = "گەڕانەوە";
+    buttonLink = "";
   }
+  buttonClasses = "bg-gray-500 hover:bg-gray-600";
 
   return (
     <div
@@ -38,7 +41,7 @@ const Navbar = () => {
                            1.5xl:w-[125px] 1.5xl:h-[55px] 1.5xl:ml-3
                            shadow-[0_0_7px_rgba(0,0,0,0.35)] ${buttonClasses}`}
       >
-        {buttonText === "Back" ? (
+        {buttonText === "گەڕانەوە" && buttonLink == "" ? (
           <button
             onClick={() => navigate(-1)}
             className="w-full h-full font-rabar font-bold text-lg text-white"
