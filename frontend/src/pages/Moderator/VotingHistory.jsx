@@ -41,6 +41,11 @@ const VotingHistory = () => {
                                 </div>
                                 <div className="overflow-y-auto w-full pl-3 no-scrollbar::-webkit-scrollbar no-scrollbar">
                                     {
+                                        getData.length === 0 ? (
+                                            <div className="w-full h-full flex items-center justify-center">
+                                                <h2 className="text-[20px]">هیچ زانیاریەکی نییە</h2>
+                                            </div>
+                                        ) : (
                                         getData.map((data, index) => (
                                             <div key={index} className="w-full h-[80px] grid grid-rows-2 grid-cols-2 my-3">
                                                 <h3 className="pr-2.5 m-0">{data.krd_eng_relation.english_word}</h3>
@@ -48,6 +53,7 @@ const VotingHistory = () => {
                                                 <h3 className="pr-2.5 m-0">{data.krd_eng_relation.kurdish_word.kurdish_word}</h3>
                                             </div>
                                         ))
+                                    )
                                     }
                                 </div>
                             </div>
