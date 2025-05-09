@@ -17,7 +17,7 @@ const Voting = () => {
         kurdish_word: "",
         english_word: "",
         reason: "",
-        category: "Programming",
+        category: "technology",
     });
     const [AddingNewWordVisibility, setAddingNewWordVisibility] = useState(true); 
     const [loadingIncreaseData, setLoadingIncreaseData] = useState(false);
