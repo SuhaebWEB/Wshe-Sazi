@@ -36,7 +36,6 @@ const Voting = () => {
 
             setVotingItems(response.data.data);
         } catch (err) {
-            console.error("Error fetching data:", err);
             setError("Failed to load data. Please try again.");
         } finally {
             setLoading(false);
@@ -98,8 +97,6 @@ const Voting = () => {
         } catch (error) {
             if (error.response && error.response.data.errors) {
                 setValidationErrors(error.response.data.errors);
-            } else {
-                console.error("Error sending vote:", error);
             }
         }finally{
             setLoading(false);
@@ -119,7 +116,7 @@ const Voting = () => {
                 kurdish_word: "",
                 english_word: "",
                 reason: "",
-                category: "Programming",
+                category: "technology",
             });
     
             // Close form and reset button text
@@ -129,13 +126,12 @@ const Voting = () => {
             // Fetch updated data from the backend
             fetchVotingItems();
         } catch (error) {
-            console.error("Error adding new word:", error); 
             setError(error.response.data.errors)
         }finally{
             setLoadingIncreaseData(false);
         }
     };
-    console.log(AddingNewWord)
+
     
 
     return (
@@ -240,14 +236,14 @@ const Voting = () => {
                                         name="reason"
                                         onChange={handlingSetData}
                                         style={{ fontSize: '16px' }}
-                                        className={`w-full h-[76px] min-h-[16px] bg-[#EDEDED] border-b-[4px] ${ error.reason ? 'border-red-500':'border-[#5e6676] hover:border-[#407dff]'} rounded-[6px]  focus:border-[#155DFC] focus:outline-none`}
+                                        className={`w-full h-[76px] min-h-[16px] bg-[#EDEDED] border-b-[4px] ${ error?.reason ? 'border-red-500':'border-[#5e6676] hover:border-[#407dff]'} rounded-[6px]  focus:border-[#155DFC] focus:outline-none`}
                                     />
                                     <p className="text-xs 1.5xl:text-[15px] text-[#5A5A5A]">
                                         ڕوونکردنەوە لەسەر ئەوەی کە بۆچی ئەو وشەیە بە گونجاو دەزانی.
                                     </p>
                                     {
-                                        error.reason && (
-                                            <p className="text-red-500 text-xs 1.5xl:text-[15px]">{error.reason[0]}</p>
+                                        error?.reason && (
+                                            <p className="text-red-500 text-xs 1.5xl:text-[15px]">{error?.reason[0]}</p>
                                         )
                                     }
 
