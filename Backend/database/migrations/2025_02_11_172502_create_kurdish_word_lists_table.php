@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('kurdish_word_lists', function (Blueprint $table) {
             $table->id();
             $table->string('kurdish_word',255);
-            $table->text('reason');
+            $table->text('reason')->nullable();
             $table->timestamps();
         });
     }
