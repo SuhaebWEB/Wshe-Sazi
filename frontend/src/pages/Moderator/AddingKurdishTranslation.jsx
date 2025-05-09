@@ -29,7 +29,7 @@ const create = () => {
                 kurdish_word: "",
                 english_word: "",
                 reason: "",
-                category: "Programming",
+                category: "technology",
             })
             setMessageError({});
             setSucessedMessage(response.data.message);
@@ -132,15 +132,15 @@ const create = () => {
                                             name="reason"
                                             onChange={handleChange}
                                             style={{ fontSize: '16px' }}
-                                            className={`w-full h-[76px] bg-[#EDEDED] border-b-[4px] ${messageError.reason ? "border-red-600" : "border-[#5e6676] hover:border-[#407dff]"}  focus:border-[#155DFC} rounded-[6px] focus:outline-none`} />
+                                            className={`w-full h-[76px] bg-[#EDEDED] border-b-[4px] ${messageError?.reason ? "border-red-600" : "border-[#5e6676] hover:border-[#407dff]"}  focus:border-[#155DFC} rounded-[6px] focus:outline-none`} />
                                         <div>
                                             <p className="text-xs 1.5xl:text-[15px] text-[#5A5A5A]">
                                                 ڕوونکردنەوە لەسەر ئەوەی کە بۆچی ئەو وشبە گونجاو دەزانی.
                                             </p>
                                             {
-                                                messageError.reason && (
+                                                messageError?.reason && (
                                                     <p className="text-xs text-red-600">
-                                                        {messageError.reason}
+                                                        {messageError?.reason}
                                                     </p>
                                                 )
                                             }
