@@ -22,7 +22,7 @@ class KurdishEnglishWordController extends Controller
         
         return response()->json([
                 'message' => 'داتاکە بەسەرکەوتووی خەزنکرا'
-        ]);
+        ], 201);
     }
 
     public function histroyWord(){
