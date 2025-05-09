@@ -11,7 +11,7 @@ const create = () => {
         kurdish_word: "",
         english_word: "",
         reason: "",
-        category: "Programming",
+        category: "technology",
     });
     const [loadingPage, setLoadingPage] = useState(false);
     const [messageError, setMessageError] = useState({});
