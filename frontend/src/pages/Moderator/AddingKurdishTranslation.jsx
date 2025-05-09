@@ -35,8 +35,7 @@ const create = () => {
             setSucessedMessage(response.data.message);
 
         } catch (error) {
-            console.log(error);
-            console.log(data)
+            
             setMessageError(error.response.data.errors)
         } finally {
             setLoadingPage(false);
