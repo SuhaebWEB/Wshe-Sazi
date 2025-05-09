@@ -25,7 +25,7 @@ class CombinedWordRequest extends FormRequest
             "kurdish_word"=>"required|string|max:255",
             'reason'=>"max:1000",
 
-            'category'=>'required|string|exists:categories,category|',
+            'category'=>'required|string|exists:categories,category',
             'english_word'=>'required|string',
         ];
     }
