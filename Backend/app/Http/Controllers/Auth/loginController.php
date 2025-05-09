@@ -39,24 +39,4 @@ class loginController extends Controller
             "user" => $user
         ])->withCookie($cookie);
     }
-
-    public function Register(Request $request){
-        $validated = $request->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required',
-            'phone_no' => 'required',
-            'role' => 'required|in:1,2'
-        ]);
-
-        $user = User::create($validated);
-        $token = $user->createToken($user->email)->plainTextToken;
-
-        return response()->json([
-            'message' => 'User registered successfully',
-            'user' => $user,
-            "token" => $token
-        ], 201);
-    }
 }
