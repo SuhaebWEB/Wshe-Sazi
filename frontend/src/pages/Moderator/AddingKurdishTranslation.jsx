@@ -86,15 +86,15 @@ const create = () => {
                                             name="english_word"
                                             value={data.english_word}
                                             onChange={handleChange}
-                                            className={`w-full h-[40px] bg-[#EDEDED] border-b-[4px] ${messageError.english_word ? "border-red-600" : "border-[#5e6676] hover:border-[#407dff]"}  focus:border-[#155DFC] rounded-[6px] focus:outline-none`} />
+                                            className={`w-full h-[40px] bg-[#EDEDED] border-b-[4px] ${messageError?.english_word ? "border-red-600" : "border-[#5e6676] hover:border-[#407dff]"}  focus:border-[#155DFC] rounded-[6px] focus:outline-none`} />
                                         <div>
                                             <p className="text-xs 1.5xl:text-[15px] text-[#5A5A5A]">
                                                 ئەو وشە ئینگلیزیەی کەدەتەوێ وەرگێڕانی بۆ بکەی.
                                             </p>
                                             {
-                                                messageError.english_word && (
+                                                messageError?.english_word && (
                                                     <p className="text-xs text-red-600">
-                                                        {messageError.english_word}
+                                                        {messageError?.english_word}
                                                     </p>
                                                 )
                                             }
@@ -108,15 +108,15 @@ const create = () => {
                                             name="kurdish_word"
                                             value={data.kurdish_word}
                                             onChange={handleChange}
-                                            className={`w-full h-[40px] bg-[#EDEDED] border-b-[4px] ${messageError.kurdish_word ? "border-red-600" : "border-[#5e6676] hover:border-[#407dff]"}  focus:border-[#155DFC] rounded-[6px] focus:outline-none`} />
+                                            className={`w-full h-[40px] bg-[#EDEDED] border-b-[4px] ${messageError?.kurdish_word ? "border-red-600" : "border-[#5e6676] hover:border-[#407dff]"}  focus:border-[#155DFC] rounded-[6px] focus:outline-none`} />
                                         <div>
                                             <p className=" text-xs 1.5xl:text-[15px] text-[#5A5A5A]">
                                                 ئەو وشە کوردیەی کە دەتەوێ لەبەرابەر وشە کوردیەکە بێ.
                                             </p>
                                             {
-                                                messageError.kurdish_word && (
+                                                messageError?.kurdish_word && (
                                                     <p className="text-xs text-red-600">
-                                                        {messageError.kurdish_word}
+                                                        {messageError?.kurdish_word}
                                                     </p>
                                                 )
                                             }
