@@ -80,7 +80,7 @@ const Voting = () => {
                 vote_value: selectedVotes[item.id] || 0,
             })),
         };
-
+        setShowForm(false);
         setLoading(true);
         
         try {
