@@ -19,7 +19,6 @@ class krdEngVotingController extends Controller
         })
         ->select('id','english_word', 'kurdish_word_id')
         ->with('kurdish_word:id,kurdish_word,reason')
-        ->orderBy('english_word', 'asc')
         ->get()->groupBy('english_word');
 
         
