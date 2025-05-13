@@ -158,7 +158,7 @@ const Voting = () => {
                                     <div key={item.id} className="w-full grid grid-rows-3 gap-3 grid-cols-1">
                                         
                                         <h1 className="text-3xl 1.5xl:text-4xl">{item.kurdish_word?.kurdish_word}</h1> 
-                                        <p className="col-span-full 1.5xl:text-xl">{item.kurdish_word?.reason || "No reason provided"}</p>
+                                        <p className="col-span-full 1.5xl:text-xl">{item.kurdish_word?.reason}</p>
                                         
                                         <div className="w-3/4 px-3.5 flex flex-col justify-center justify-self-center">
                                             <input
